@@ -23,7 +23,8 @@ RUN chmod +x ./pocketbase
 RUN rm /pocketbase*.zip
 
 # Notify Docker that the container wants to expose a port.
-EXPOSE 8080
+EXPOSE 80
+EXPOSE 433
 
 # Start Pocketbase
-CMD [ "./pocketbase", "serve",  "--http", "0.0.0.0:8080" ]
+CMD [ "./pocketbase", "serve",  "--http", "0.0.0.0:80", "--https", "0.0.0.0:443"]
